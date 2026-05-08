@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Gunaa Grill - Premium BBQ & Shabu Home Service</title>
+  <meta name="description" content="Gunaa Grill - Solusi grill & shabu home service. Paket lengkap dengan daging premium, alat grill, dan free delivery Jakarta Selatan. Harga nett!">
+  <meta name="keywords" content="gunaa grill, bbq home service, shabu home service, paket grill, grill rumahan">
+  <meta name="author" content="Gunaa Grill">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.gunaagrill.my.id/">
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* ===== CSS SAMA PERSIS DENGAN SEBELUMNYA (tidak diubah) ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg-cream: #FDF7F0;
+      --bg-cream-dark: #F3EBE1;
+      --brown-deep: #2E241F;
+      --brown-rich: #4A3428;
+      --copper: #C47A44;
+      --copper-light: #D69960;
+      --gold: #C9A03D;
+      --card-white: #FFFFFF;
+      --text-dark: #2E241F;
+      --shadow-sm: 0 4px 15px rgba(0,0,0,0.05);
+      --shadow-md: 0 8px 28px rgba(0,0,0,0.1);
+      --shadow-lg: 0 25px 45px rgba(0,0,0,0.12);
+    }
+    body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-cream-dark) 100%); color: var(--text-dark); overflow-x: hidden; }
+    h1, h2, h3, h4, .serif { font-family: 'Playfair Display', serif; font-weight: 800; letter-spacing: -0.02em; }
+    .section-title { font-size: 2.8rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--brown-deep); }
+    .section-subtitle { color: var(--copper); font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; }
+    @media (max-width: 768px) { .section-title { font-size: 2rem; } }
+
+    .navbar { background: rgba(46, 36, 31, 0.96); backdrop-filter: blur(12px); padding: 0.8rem 0; transition: all 0.4s ease; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .navbar.scrolled { padding: 0.5rem 0; background: rgba(46, 36, 31, 0.98); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+    .navbar-brand { display: flex; align-items: center; gap: 12px; }
+    .navbar-brand img { height: 48px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+    .brand-text { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 800; color: white; letter-spacing: 1px; }
+    .brand-text span { color: var(--copper); }
+    .nav-link { font-weight: 600; font-size: 0.85rem; color: rgba(255,255,255,0.88) !important; margin: 0 0.2rem; padding: 0.5rem 1rem !important; transition: all 0.3s; border-radius: 40px; }
+    .nav-link:hover { color: var(--copper) !important; background: rgba(196, 122, 68, 0.15); }
+    .btn-order-nav { background: var(--copper); color: #1a1a1a !important; padding: 8px 28px !important; border-radius: 40px; margin-left: 8px; font-weight: 700; box-shadow: 0 4px 12px rgba(196, 122, 68, 0.4); }
+    .btn-order-nav:hover { background: var(--copper-light); transform: translateY(-2px); }
+
+    .hero { min-height: 92vh; background: url('bar atas.jpg') no-repeat center center; background-size: cover; background-attachment: fixed; position: relative; display: flex; align-items: center; margin-top: 76px; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(107deg, rgba(46,36,31,0.55) 0%, rgba(46,36,31,0.25) 100%); }
+    .hero .container { position: relative; z-index: 2; }
+    .hero-badge { background: rgba(46,36,31,0.65); backdrop-filter: blur(4px); display: inline-block; padding: 0.6rem 1.5rem; border-radius: 50px; font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.25); color: var(--copper-light); }
+    .hero h1 { font-size: 4.2rem; line-height: 1.1; font-weight: 800; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); }
+    .hero-tagline { font-size: 1rem; font-weight: 600; margin-top: 1rem; padding: 0.8rem 1.5rem; background: rgba(46,36,31,0.6); backdrop-filter: blur(4px); display: inline-block; border-radius: 50px; border-left: 3px solid var(--copper); }
+    @media (max-width: 768px) { .hero { margin-top: 66px; min-height: 85vh; background-attachment: scroll; } .hero h1 { font-size: 2.4rem; } }
+
+    .btn-primary-custom { background: var(--copper); color: #1a1a1a; border: none; padding: 14px 38px; border-radius: 50px; font-weight: 800; transition: 0.3s; box-shadow: 0 5px 18px rgba(196, 122, 68, 0.5); }
+    .btn-primary-custom:hover { background: var(--copper-light); transform: translateY(-3px); }
+    .btn-outline-custom { border: 2px solid var(--copper); background: transparent; color: var(--copper); padding: 10px 28px; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+    .btn-outline-custom:hover { background: var(--copper); color: #1a1a1a; }
+
+    .stats-section { background: var(--card-white); border-radius: 30px; box-shadow: var(--shadow-lg); padding: 2rem 1rem; margin-top: -50px; position: relative; z-index: 10; border: 1px solid rgba(0,0,0,0.06); }
+    .stat-item { text-align: center; border-right: 1px solid rgba(0,0,0,0.06); }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--copper); }
+    @media (max-width: 768px) { .stats-section { margin-top: -30px; } .stat-item { border-right: none; margin-bottom: 1rem; } }
+
+    .package-card { background: var(--card-white); border-radius: 28px; overflow: hidden; transition: all 0.4s; box-shadow: var(--shadow-sm); cursor: pointer; opacity: 0; transform: translateY(30px); border: 1px solid rgba(0,0,0,0.05); height: 100%; }
+    .package-card.show { opacity: 1; transform: translateY(0); }
+    .package-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); border-color: var(--copper); }
+    .package-img-wrapper { position: relative; overflow: hidden; height: 220px; background: var(--bg-cream-dark); }
+    .package-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .package-card:hover .package-img { transform: scale(1.05); }
+    .package-badge { position: absolute; top: 15px; right: 15px; background: var(--brown-deep); color: white; padding: 5px 14px; border-radius: 30px; font-size: 0.7rem; font-weight: 700; }
+    .package-price { font-size: 1.6rem; font-weight: 800; color: var(--copper); margin: 10px 0; }
+    .feature-list { list-style: none; padding-left: 0; font-size: 0.8rem; }
+    .feature-list li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+    .feature-list i { color: var(--gold); }
+
+    .why-card { background: var(--card-white); border-radius: 24px; padding: 1.8rem; text-align: center; transition: 0.3s; box-shadow: var(--shadow-sm); height: 100%; border: 1px solid rgba(0,0,0,0.05); }
+    .why-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--copper); }
+    .why-icon { width: 75px; height: 75px; background: rgba(196, 122, 68, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
+    .why-icon i { font-size: 2rem; color: var(--copper); }
+
+    .story-section { background: var(--brown-deep); color: #FDF7F0; padding: 5rem 0; margin: 3rem 0; }
+    .story-card { background: rgba(255,255,255,0.03); backdrop-filter: blur(8px); border-radius: 28px; padding: 2.5rem; border: 1px solid rgba(255,255,255,0.08); }
+    .story-year { font-size: 4.5rem; font-weight: 800; color: var(--copper); line-height: 1; }
+
+    .step-card { text-align: center; background: var(--card-white); border-radius: 24px; padding: 2rem 1rem; box-shadow: var(--shadow-sm); transition: 0.3s; border: 1px solid rgba(0,0,0,0.05); height: 100%; }
+    .step-card:hover { transform: translateY(-5px); border-color: var(--copper); }
+    .step-number { width: 65px; height: 65px; background: var(--copper); color: var(--brown-deep); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 800; margin: 0 auto 1rem; }
+
+    .extra-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+    .extra-tab { padding: 10px 28px; border-radius: 50px; font-weight: 700; cursor: pointer; background: var(--card-white); border: 1px solid rgba(0,0,0,0.1); color: var(--brown-deep); transition: 0.3s; }
+    .extra-tab.active { background: var(--copper); color: var(--brown-deep); border: none; box-shadow: 0 4px 12px rgba(196,122,68,0.4); }
+    .extra-category { display: none; }
+    .extra-category.active-category { display: block; }
+    
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+    @media (max-width: 768px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } }
+    @media (max-width: 480px) { .product-grid { grid-template-columns: 1fr; } }
+    
+    .menu-card {
+      background: var(--card-white);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .menu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--copper); }
+    .menu-img-wrapper { position: relative; cursor: pointer; overflow: hidden; height: 180px; background: var(--bg-cream-dark); }
+    .menu-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .menu-card:hover .menu-img { transform: scale(1.05); }
+    .menu-info { padding: 1rem; }
+    .menu-name { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; color: var(--brown-deep); }
+    .menu-desc { font-size: 0.7rem; color: #888; margin-bottom: 0.5rem; line-height: 1.3; }
+    .menu-price { font-weight: 800; color: var(--copper); font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .menu-price small { font-size: 0.7rem; font-weight: normal; color: #999; }
+    .btn-add-cart {
+      width: 100%;
+      background: linear-gradient(135deg, var(--copper), var(--gold));
+      border: none;
+      padding: 10px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: 0.3s;
+      color: white;
+    }
+    .btn-add-cart:hover { background: linear-gradient(135deg, var(--gold), var(--copper)); transform: translateY(-2px); }
+
+    .lightbox-modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9);
+      z-index: 9999; display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transition: 0.3s; cursor: pointer;
+    }
+    .lightbox-modal.active { opacity: 1; visibility: visible; }
+    .lightbox-content { max-width: 90%; max-height: 90%; position: relative; text-align: center; }
+    .lightbox-img { max-width: 100%; max-height: 85vh; object-fit: contain; border-radius: 16px; border: 2px solid var(--gold); }
+    .lightbox-caption { color: white; margin-top: 15px; font-size: 1rem; background: rgba(0,0,0,0.6); display: inline-block; padding: 8px 20px; border-radius: 40px; }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 35px; cursor: pointer; transition: 0.2s; z-index: 10000; }
+    .lightbox-close:hover { color: var(--copper); }
+
+    .testimonial-swiper { padding: 20px 0 50px; overflow: hidden; }
+    .testi-card { background: var(--card-white); border-radius: 24px; padding: 2rem; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); height: 100%; }
+    .testi-stars i { color: var(--gold); margin-right: 2px; }
+    .testi-avatar { width: 50px; height: 50px; background: var(--copper); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--brown-deep); font-weight: bold; }
+    .swiper-pagination-bullet-active { background: var(--copper) !important; }
+
+    .contact-section { background: linear-gradient(135deg, #fefaf5 0%, #f2ece2 100%); padding: 4rem 0; }
+    .contact-card { background: white; border-radius: 32px; padding: 2rem; box-shadow: var(--shadow-md); }
+    .contact-info-card { background: var(--brown-deep); border-radius: 32px; padding: 2rem; color: #f0f0f0; height: 100%; }
+    .contact-info-card .contact-icon { width: 50px; height: 50px; background: rgba(255,255,255,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .contact-info-card a { color: var(--copper-light); text-decoration: none; }
+    .form-control { background: #fefaf5; border: 1px solid rgba(0,0,0,0.1); border-radius: 14px; padding: 12px; }
+    .form-control:focus { border-color: var(--copper); box-shadow: none; }
+
+    footer { background: var(--brown-deep); color: #d4cfc6; padding: 3rem 0 1.5rem; }
+    footer .footer-logo { height: 55px; width: auto; margin-bottom: 1rem; }
+
+    .wa-float { position: fixed; bottom: 30px; right: 30px; width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; z-index: 100; transition: 0.3s; box-shadow: 0 5px 20px rgba(37,211,102,0.5); }
+    .floating-cart { position: fixed; bottom: 105px; right: 30px; width: 58px; height: 58px; background: var(--copper); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; transition: 0.3s; box-shadow: 0 5px 18px rgba(196,122,68,0.5); }
+    .cart-count { position: absolute; top: -5px; right: -5px; background: #C23B22; color: white; font-size: 0.7rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+
+    .cart-sidebar { position: fixed; top: 0; right: -480px; width: 450px; max-width: 90%; height: 100vh; background: white; z-index: 1000; transition: right 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); box-shadow: -5px 0 30px rgba(0,0,0,0.2); padding: 1.5rem; overflow-y: auto; }
+    .cart-sidebar.open { right: 0; }
+    .cart-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(46,36,31,0.7); z-index: 999; opacity: 0; visibility: hidden; transition: 0.3s; }
+    .cart-overlay.active { opacity: 1; visibility: visible; }
+    .cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eee; }
+    .cart-item-info { flex: 2; }
+    .cart-item-name { font-weight: 600; font-size: 0.95rem; }
+    .cart-item-price { color: var(--copper); font-weight: 600; font-size: 0.9rem; }
+    .cart-item-controls { display: flex; align-items: center; gap: 8px; }
+    .cart-qty-btn { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #ddd; background: white; cursor: pointer; transition: 0.2s; font-weight: bold; }
+    .cart-qty-btn:hover { background: var(--copper); color: white; border-color: var(--copper); }
+    .cart-item-qty { min-width: 30px; text-align: center; font-weight: 500; }
+    .cart-remove-btn { background: none; border: none; color: #999; cursor: pointer; font-size: 1.1rem; transition: 0.2s; }
+    .cart-remove-btn:hover { color: #C23B22; }
+
+    .order-form input, .order-form textarea { width: 100%; padding: 10px 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 12px; font-size: 0.9rem; background: #fefaf5; }
+    .order-form input:focus, .order-form textarea:focus { outline: none; border-color: var(--copper); box-shadow: 0 0 0 2px rgba(196,122,68,0.2); }
+    .order-form label { font-weight: 600; margin-bottom: 5px; display: block; font-size: 0.8rem; color: #4a3428; }
+
+    .detail-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1100; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: 0.3s; }
+    .detail-modal.active { opacity: 1; visibility: visible; }
+    .detail-content { background: white; max-width: 650px; width: 90%; border-radius: 32px; overflow: hidden; max-height: 85vh; overflow-y: auto; }
+    .package-image-large { width: 100%; max-height: 320px; object-fit: cover; }
+    .toast-custom { position: fixed; bottom: 130px; right: 30px; background: var(--brown-deep); color: #e6d5b8; padding: 12px 24px; border-radius: 60px; font-size: 0.85rem; z-index: 1200; animation: slideIn 0.3s ease; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(100px); } to { opacity: 1; transform: translateX(0); } }
+  </style>
+</head>
+<body>
+
+<div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <div class="lightbox-content">
+    <img id="lightboxImg" class="lightbox-img" src="" alt="Preview">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+  </div>
+</div>
+
+<a href="https://wa.me/62895636110505" target="_blank" class="wa-float"><i class="fab fa-whatsapp"></i></a>
+<div class="floating-cart" id="cartBtn"><i class="fas fa-shopping-bag fa-xl text-white"></i><span id="cartCount" class="cart-count">0</span></div>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="GUNAA GRILL Logo Design.png" alt="Logo Gunaa Grill" style="height: 48px; width: auto;" onerror="this.src='https://placehold.co/60x60/C47A44/white?text=GG'"><span class="brand-text">Gunaa<span>Grill</span></span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#packages">Menu Paket</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why-us">Keunggulan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#extra-menu">Menu+</a></li>
+        <li class="nav-item"><a class="nav-link" href="#story">Our Story</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Ulasan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+        <li class="nav-item"><a class="btn-order-nav" href="https://wa.me/62895636110505"><i class="fab fa-whatsapp me-1"></i>Order Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content text-white">
+      <div class="hero-badge"><i class="fas fa-fire me-2"></i> SOLUSI GRILL TANPA RIBET</div>
+      <h1 class="mb-3">Bawa Keseruan Resto Grill ke Rumah Kamu!</h1>
+      <p class="lead mb-3">Solusi makan enak bareng teman, keluarga, atau pasangan. Kami antar alat dan bahan lengkap, kamu tinggal duduk manis dan bakar! Harga <i>nett</i>, tanpa biaya tambahan.</p>
+      <div class="hero-tagline"><i class="fas fa-check-circle me-2"></i> Buka → Nyalakan → Bakar → Nikmati</div>
+      <div class="d-flex gap-3 flex-wrap mt-4">
+        <a href="#packages" class="btn btn-primary-custom">Lihat Paket →</a>
+        <a href="#how-to-order" class="btn btn-outline-light px-4 py-3 rounded-pill">Cara Pemesanan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="container"><div class="stats-section" data-aos="fade-up"><div class="row text-center">
+  <div class="col-md-3 col-6 stat-item"><div class="stat-number">1,000+</div><div class="small fw-semibold">PELANGGAN PUAS</div></div>
+  <div class="col-md-3 col-6 stat-item"><div class="stat-number">4.9/5</div><div class="small fw-semibold">RATING</div></div>
+  <div class="col-md-3 col-6 stat-item"><div class="stat-number">100%</div><div class="small fw-semibold">BAHAN FRESH</div></div>
+  <div class="col-md-3 col-6 stat-item"><div class="stat-number">2024</div><div class="small fw-semibold">BERDIRI SEJAK</div></div>
+</div></div></div>
+
+<!-- Packages -->
+<section id="packages" class="container py-5">
+  <div class="text-center mb-5" data-aos="fade-up"><div class="section-subtitle">GRILL PACKAGES</div><h2 class="section-title">Pilih Paket Grill Kamu</h2><p class="text-muted">Sesuaikan dengan kebutuhan acara atau jumlah teman kamu</p></div>
+  <div class="row g-4" id="package-grid"></div>
+</section>
+
+<!-- Why Us -->
+<section id="why-us" class="container py-5"><div class="text-center mb-5" data-aos="fade-up"><div class="section-subtitle">KENAPA HARUS GUNAA GRILL?</div><h2 class="section-title">Lebih Praktis, Lebih Seru</h2></div><div class="row g-4" id="why-grid"></div></section>
+
+<!-- How to Order -->
+<section id="how-to-order" class="container py-5"><div class="text-center mb-5" data-aos="fade-up"><div class="section-subtitle">HOW IT WORKS</div><h2 class="section-title">3 Langkah Mudah</h2></div>
+<div class="row g-4"><div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="step-card"><div class="step-number">1</div><h5 class="fw-bold">Pilih & Pesan</h5><p class="small text-muted">Pilih paket favorit, tambah extra, lalu konfirmasi via WhatsApp</p></div></div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><div class="step-card"><div class="step-number">2</div><h5 class="fw-bold">Kami Antar</h5><p class="small text-muted">Tim kami antar paket lengkap ke rumah/kosan/liburanmu</p></div></div>
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="300"><div class="step-card"><div class="step-number">3</div><h5 class="fw-bold">Bakar & Nikmati</h5><p class="small text-muted">Siapkan kompor, bakar daging, dan nikmati momen seru bersama</p></div></div></div>
+</section>
+
+<!-- Extra Menu -->
+<section id="extra-menu" class="container py-5">
+  <div class="text-center mb-5" data-aos="fade-up">
+    <div class="section-subtitle">TAMBAHAN</div>
+    <h2 class="section-title">Menu Tambahan</h2>
+    <p class="text-muted">Klik gambar untuk melihat detail. Lengkapi grill-mu dengan pilihan terbaik!</p>
+  </div>
+  <div class="extra-tabs" data-aos="fade-up">
+    <div class="extra-tab active" data-cat="protein"><i class="fas fa-drumstick-bite me-2"></i>Protein & Daging</div>
+    <div class="extra-tab" data-cat="sayuran"><i class="fas fa-leaf me-2"></i>Sayuran & Pelengkap</div>
+    <div class="extra-tab" data-cat="sauce"><i class="fas fa-mortar-pestle me-2"></i>Aneka Saus</div>
+    <div class="extra-tab" data-cat="drink"><i class="fas fa-wine-bottle me-2"></i>Minuman</div>
+    <div class="extra-tab" data-cat="alat"><i class="fas fa-tools me-2"></i>Alat Grill</div>
+  </div>
+  <div id="extra-protein" class="extra-category active-category"><div class="product-grid" id="protein-list"></div></div>
+  <div id="extra-sayuran" class="extra-category"><div class="product-grid" id="sayuran-list"></div></div>
+  <div id="extra-sauce" class="extra-category"><div class="product-grid" id="sauce-list"></div></div>
+  <div id="extra-drink" class="extra-category"><div class="product-grid" id="drink-list"></div></div>
+  <div id="extra-alat" class="extra-category"><div class="product-grid" id="alat-list"></div></div>
+</section>
+
+<!-- Our Story -->
+<section id="story" class="story-section">
+  <div class="container"><div class="row align-items-center g-5">
+    <div class="col-lg-6" data-aos="fade-right"><div class="story-card"><div class="d-flex align-items-center gap-3 mb-4"><div class="story-year">2024</div><div class="line" style="width: 60px; height: 2px; background: var(--copper);"></div><span style="color: var(--copper);">MULAI BERKARYA</span></div><h2 class="display-5 fw-bold mb-4">Cerita di Balik Gunaa Grill</h2>
+      <p class="mb-3">Gunaa Grill lahir dari satu keresahan sederhana: <strong>"Kenapa grill di rumah itu repot banget?"</strong></p>
+      <p class="mb-3">Mulai dari nyari alat, beli daging, bumbu, sampai bersih-bersih — semua jadi pekerjaan rumah yang bikin malas. Padahal, momen makan-makan sambil memanggang itu seru banget kalau bareng teman atau keluarga.</p>
+      <p class="mb-3">Dari situ, terbesit ide: <strong>gimana kalau ada layanan yang tinggal pesan, semua lengkap datang, dan yang perlu kita lakuin cuma bakar dan makan?</strong></p>
+      <div class="story-quote" style="border-left: 3px solid var(--copper); padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic;">"Kami nggak mau ribet. Dan kami yakin kamu juga nggak mau."</div>
+      <p class="mb-3">Maka pada tahun 2024, Gunaa Grill resmi meluncur. Bukan karena bisnis keluarga atau warisan resep turun-temurun. Tapi karena kebutuhan nyata: <strong>grill rumahan yang simpel, lengkap, dan tetap enak.</strong></p>
+      <p class="mb-4">Hari ini, kami sudah melayani ribuan pelanggan di Jakarta Selatan. Bukan karena hebat, tapi karena mereka puas — alat lengkap, daging fresh, harga <i>nett</i> bersahabat, dan proses yang <strong>nggak bikin pusing.</strong></p>
+      <div class="row g-3 text-center mt-2"><div class="col-4"><div class="border-end border-white-20"><div class="fw-bold fs-3" style="color: var(--copper);">Baru</div><div class="small">BERDIRI 2024</div></div></div><div class="col-4"><div class="border-end border-white-20"><div class="fw-bold fs-3" style="color: var(--copper);">12+</div><div class="small">PAKET & MENU</div></div></div><div class="col-4"><div class="fw-bold fs-3" style="color: var(--copper);">1,000+</div><div class="small">PELANGGAN</div></div></div>
+    </div></div>
+    <div class="col-lg-6" data-aos="fade-left"><div class="position-relative text-center"><img src="GUNAA GRILL Logo Design.png" alt="Logo Gunaa Grill" class="img-fluid rounded-4 shadow-lg" style="max-width: 320px; background: rgba(255,255,255,0.03); padding: 25px; border-radius: 50px;"><div class="position-absolute bottom-0 end-0 p-3 rounded-4" style="background: var(--copper); transform: translate(10px, 10px);"><i class="fas fa-quote-right fa-2x text-white"></i></div><div class="mt-4 p-3" style="background: rgba(255,255,255,0.03); border-radius: 20px;"><p class="small mb-0 fst-italic">"Nggak perlu jadi koki buat bikin grill enak di rumah. Cukup pesan Gunaa Grill, sisanya kita yang urus."</p><p class="small mt-2" style="color: var(--copper);">— Tim Gunaa Grill</p></div></div></div>
+  </div></div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="container py-5"><div class="text-center mb-5" data-aos="fade-up"><div class="section-subtitle">TESTIMONIALS</div><h2 class="section-title">Apa Kata Mereka?</h2><p class="text-muted">Ribuan pelanggan telah merasakan kemudahan grill bersama Gunaa Grill</p></div>
+<div class="swiper testimonial-swiper" data-aos="fade-up"><div class="swiper-wrapper" id="testi-wrapper"></div><div class="swiper-pagination"></div></div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact-section"><div class="container"><div class="row g-5">
+  <div class="col-lg-5" data-aos="fade-right"><div class="contact-info-card"><div class="section-subtitle" style="color: var(--copper-light);">GET IN TOUCH</div><h2 class="section-title" style="font-size: 2rem; color: white;">Siap Pesan Grill?</h2><p class="mb-4 opacity-75">Hubungi kami sekarang, tim kami siap membantu 24/7</p>
+    <div class="d-flex gap-3 mb-4 align-items-center"><div class="contact-icon"><i class="fab fa-whatsapp fa-xl" style="color: #25D366;"></i></div><div><strong>WhatsApp</strong><br><a href="https://wa.me/62895636110505">+62 895-6361-10505</a></div></div>
+    <div class="d-flex gap-3 mb-4 align-items-center"><div class="contact-icon"><i class="fab fa-instagram fa-xl"></i></div><div><strong>Instagram</strong><br><span>@gunaa_grill</span></div></div>
+    <div class="d-flex gap-3 mb-4 align-items-center"><div class="contact-icon"><i class="fas fa-map-marker-alt fa-xl"></i></div><div><strong>Area Layanan</strong><br><span>Jakarta Selatan & sekitarnya</span></div></div>
+    <div class="d-flex gap-3 mb-4 align-items-center"><div class="contact-icon"><i class="far fa-clock fa-xl"></i></div><div><strong>Jam Operasional</strong><br><span>Setiap hari • 09.00 - 22.00 WIB</span></div></div>
+    <div class="mt-4 pt-2"><a href="https://wa.me/62895636110505" class="btn btn-primary-custom" style="background: var(--copper); color: #1a1a1a;"><i class="fab fa-whatsapp me-2"></i>Chat Sekarang</a></div>
+  </div></div>
+  <div class="col-lg-7" data-aos="fade-left"><div class="contact-card"><h4 class="mb-3 serif">Kirim Pesan</h4><form id="contactForm"><div class="mb-3"><input type="text" class="form-control" placeholder="Nama Anda" id="contactName" required></div><div class="mb-3"><input type="tel" class="form-control" placeholder="Nomor WhatsApp" id="contactPhone" required></div><div class="mb-3"><textarea class="form-control" rows="3" placeholder="Pesan atau pertanyaan Anda..." id="contactMsg" required></textarea></div><button type="submit" class="btn btn-primary-custom w-100"><i class="fab fa-whatsapp me-2"></i>Kirim via WhatsApp →</button></form></div></div>
+</div></div></section>
+
+<footer><div class="container text-center"><div class="mb-3"><img src="GUNAA GRILL Logo Design.png" alt="Gunaa Grill Logo" class="footer-logo" style="height: 55px; width: auto;" onerror="this.style.display='none'"></div><p class="mb-2">&copy; Berdiri Sejak 2024 | Harga <i>NETT</i>, Free Delivery Jakarta Selatan</p><p class="small opacity-75">Solusi Grill & Shabu Home Service. Kami Antar paket lengkap ke rumah, kosan, atau tempat liburanmu!</p><p class="small"><i class="fas fa-map-marker-alt me-1"></i> Jakarta Selatan | <i class="fab fa-whatsapp me-1"></i> +62 895-6361-10505</p></div></footer>
+
+<!-- Cart Sidebar -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="d-flex justify-content-between align-items-center mb-4"><h5 class="serif fw-bold">Pesanan Kamu</h5><i class="fas fa-times fs-4" id="closeCart" style="cursor:pointer;"></i></div>
+  <div id="cartItemsContainer" style="max-height: 40vh; overflow-y: auto;"></div>
+  <div class="order-form mt-3 pt-2 border-top">
+    <label>Atas Nama <span style="color:red">*</span></label>
+    <input type="text" id="customerName" placeholder="Nama lengkap" required>
+    <label>Nomor Telepon <span style="color:red">*</span></label>
+    <input type="tel" id="customerPhone" placeholder="08xx-xxxx-xxxx" required>
+    <label>Alamat Lengkap <span style="color:red">*</span></label>
+    <textarea id="customerAddress" rows="2" placeholder="Jl. ..., RT/RW, Kecamatan, Kota" required></textarea>
+  </div>
+  <div class="border-top pt-3 mt-3"><div class="d-flex justify-content-between fw-bold fs-5"><span>Total</span><span id="cartTotal" style="color:var(--copper);">Rp 0</span></div>
+  <button class="btn btn-primary-custom w-100 mt-3" id="checkoutWA"><i class="fab fa-whatsapp me-2"></i>Checkout via WhatsApp</button></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+AOS.init({ duration: 800, once: true });
+
+// Lightbox
+function openLightbox(imgSrc, itemName) {
+  const modal = document.getElementById('lightboxModal');
+  const img = document.getElementById('lightboxImg');
+  const caption = document.getElementById('lightboxCaption');
+  img.src = imgSrc;
+  caption.textContent = itemName;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  const modal = document.getElementById('lightboxModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
+// Data Packages
+const packages = {
+  A: { id: 'paketA', name: "Mini Grill", price: 145000, img: "mini grill paketan .png", serving: "1-3 Orang", badge: "MINI", items: ["250g Shortplate Premium", "200g Chicken Fillet", "150g Sosis/Bakso", "1 Pack Selada Segar", "1 Pack Bombay", "1 Pcs Jamur Enoki", "2 Cup Sauce 60ML", "1 Paket (Kompor Portable + Pan Grill + Gas)", "1 Capitan Grill", "3 Sumpit", "2 Rice Bowl"] },
+  B: { id: 'paketB', name: "Squad Grill", price: 225000, img: "Squad Grill Paketan .png", serving: "4-6 Orang", badge: "SQUAD", items: ["750g Shortplate Premium", "500g Chicken Fillet", "300g Sosis/Bakso", "3 Pack Selada Segar", "2 Pack Bombay", "2 Pcs Jamur Enoki", "4 Cup Sauce 60ML", "1 Paket (Kompor Portable + Panci + Gas)", "2 Capitan Grill", "6 Sumpit", "6 Rice Bowl"] },
+  C: { id: 'paketC', name: "Family Grill", price: 425000, img: "Family Grill Paketan .png", serving: "6-8 Orang", badge: "FAMILY", items: ["1000g Shortplate Premium", "1000g Chicken Fillet", "1 Paket Tomyam", "300g Sosis/Bakso", "4 Pack Selada Segar", "3 Pack Bombay", "3 Jamur Enoki", "6 Cup Sauce 60ML", "1 Paket (Kompor Portable + Pan Grill + Gas)", "3 Capitan Grill", "8 Sumpit", "8 Rice Ball"] },
+  D: { id: 'paketD', name: "Big Party Grill", price: 615000, img: "Big Party grill.png", serving: "8-10 Orang", badge: "BIG PARTY", items: ["2000g Shortplate Premium", "1500g Chicken Fillet", "2 Paket Tomyam", "500g Sosis/Bakso", "6 Pack Selada Segar", "4 Pack Bombay", "4 Jamur Enoki", "8 Cup Sauce 60ML", "1 Paket (Kompor Portable + Pan Grill + Gas)", "5 Capitan Grill", "10 Sumpit", "10 Rice Bowl"] }
+};
+
+// Protein & Daging
+const proteinItems = [ 
+  { id: 'extra_daging_premium', name: "Daging Slice Premium", price: 35000, img: "daging cslice.jpg", desc: "Slice tipis grade A | 250g", detail: "Daging sapi slice premium, empuk dan cepat matang." },
+  { id: 'extra_sosis', name: "Sosis Premium", price: 30000, img: "Sosis Mentah.jpg", desc: "Sosis ayam berkualitas | 300g", detail: "Sosis juicy dengan rasa gurih, favorit anak-anak" },
+  { id: 'extra_bakso', name: "Bakso Sapi", price: 10000, img: "Bakso Kecil.JPG", desc: "Bakso sapi homemade | 5 pcs", detail: "Bakso kenyal dengan cita rasa daging sapi asli" },
+  { id: 'extra_ayam', name: "Daging Ayam Fillet", price: 23000, img: "ayam dada.jpeg", desc: "Fillet dada ayam | 250g", detail: "Daging ayam fillet tanpa tulang, sehat dan mudah diolah" },
+  { id: 'extra_sirloin', name: "Sirloin Meltik", price: 45000, img: "sirloin meltik .jpg", desc: "Sirloin premium meltik | 250g", detail: "Sirloin dengan marbling sempurna, tekstur super lembut" },
+  { id: 'extra_saikoro', name: "Saikoro Beef", price: 40000, img: "saikoro beef.jpg", desc: "Cube cut premium | 250g", detail: "Potongan kotak ala Jepang, juicy di setiap gigitan" },
+  { id: 'extra_ribeye', name: "Ribeye Meltik", price: 50000, img: "Ribaye Meltik .jpg", desc: "Ribeye marbling tinggi | 250g", detail: "Ribeye terbaik dengan lemak premium, meleleh di mulut" }
+];
+
+// Sayuran
+const sayuranItems = [ 
+  { id: 'extra_selada', name: "Selada Segar", price: 8000, img: "selada.jpeg", desc: "Selada hijau segar | 1 Pack", detail: "Selada crispy, cocok sebagai pendamping grill" },
+  { id: 'extra_jamur', name: "Jamur Enoki", price: 8000, img: "jamur.jpeg", desc: "Jamur enoki segar | 1 pack", detail: "Jamur enoki dengan tekstur renyah, enak dipanggang" },
+  { id: 'extra_tomyam', name: "Tomyam Steamboat", price: 30000, img: "Tomyum Steamboat.jpg", desc: "Kuah tomyam pedas segar | 1 Paket", detail: "Kuah tomyam khas Thailand, cocok untuk shabu" },
+  { id: 'extra_bombay', name: "Bawang Bombay", price: 10000, img: "bawang.jpeg", desc: "Bawang bombay import | 200g", detail: "Menambah aroma manis saat dipanggang" }
+];
+
+// Aneka Saus (DENGAN TAMBAHAN SAUS GARLIC OIL)
+const sauceItems = [ 
+  { id: 'sauce_bbq', name: "Saus BBQ", price: 8000, img: "saus BBQ.png", desc: "Saus barbeque manis | 60ml", detail: "Saus dengan cita rasa smoky manis" },
+  { id: 'sauce_blackpepper', name: "Saus Black Pepper", price: 8000, img: "saus Black pepper.png", desc: "Saus lada hitam pedas | 60ml", detail: "Pedas gurih dengan aroma lada hitam" },
+  { id: 'sauce_bulgogi', name: "Saus Bulgogi", price: 8000, img: "saus bulgogi.png", desc: "Saus khas Korea | 60ml", detail: "Manis gurih ala Korean BBQ" },
+  { id: 'sauce_gochujang', name: "Saus Gochujang", price: 8000, img: "saus gochujang.png", desc: "Pasta cabai Korea | 60ml", detail: "Pedas manis khas Korea" },
+  { id: 'sauce_pedas', name: "Saus Pedas", price: 8000, img: "saus pedass.png", desc: "Saus sambal extra pedas | 60ml", detail: "Untuk pecinta pedas" },
+  { id: 'sauce_teriyaki', name: "Saus Teriyaki", price: 8000, img: "Saus Teriyaki.png", desc: "Saus teriyaki manis | 60ml", detail: "Saus Jepang manis gurih" },
+  { id: 'sauce_yakiniku', name: "Saus Yakiniku", price: 8000, img: "saus yakiniku.png", desc: "Saus khusus yakiniku | 60ml", detail: "Saus spesial untuk daging panggang" },
+  { id: 'sauce_garlic_oil', name: "Garlic Oil", price: 8000, img: "Garlic Oil.png", desc: "Minyak bawang putih aromatik | 60ml", detail: "Aroma bawang putih yang menggugah selera, cocok untuk daging panggang" },
+  { id: 'kecap_manis', name: "Kecap Manis", price: 6000, img: "kecap manis.png", desc: "Kecap manis premium | 30ml", detail: "Kecap manis dengan rasa yang pas" }
+];
+
+// Minuman - Soju Halal 6 varian
+const drinkItems = [ 
+  { id: 'soju_anggur', name: "Soju Halal - Anggur", price: 35000, img: "solju anggur.webp", desc: "Minuman rasa anggur | 360ml", detail: "Soju halal tanpa alkohol, rasa anggur segar" },
+  { id: 'soju_apel', name: "Soju Halal - Apel", price: 35000, img: "solju apel.webp", desc: "Minuman rasa apel | 360ml", detail: "Kesegaran apel dalam setiap tegukan" },
+  { id: 'soju_peach', name: "Soju Halal - Peach", price: 35000, img: "solju peach.webp", desc: "Minuman rasa peach | 360ml", detail: "Aroma peach yang manis dan menyegarkan" },
+  { id: 'soju_lychee', name: "Soju Halal - Lychee", price: 35000, img: "solju leci.webp", desc: "Minuman rasa leci | 360ml", detail: "Rasa leci yang eksotis dan manis alami" },
+  { id: 'soju_blue_ocean', name: "Soju Halal - Blue Ocean", price: 35000, img: "solju blue ocean.webp", desc: "Minuman rasa Blue Ocean | 360ml", detail: "Cita rasa Blue Ocean yang ringan dan menyegarkan" },
+  { id: 'soju_strawberry', name: "Soju Halal - Strawberry", price: 35000, img: "solju strawbery.webp", desc: "Minuman rasa strawberry | 360ml", detail: "Manis alami strawberry yang menggoda" }
+];
+
+// Alat Grill
+const alatItems = [ 
+  { id: 'extra_kompor', name: "Kompor Portable", price: 25000, img: "Kompor Portable.jpeg", desc: "Kompor gas portable | 1 unit", detail: "Kompor kecil praktis untuk grill di mana saja" },
+  { id: 'extra_gas', name: "Gas Portable", price: 20000, img: "Gas Portable.jpeg", desc: "Tabung gas portable | 1 tabung", detail: "Gas isi ulang untuk kompor portable" },
+  { id: 'extra_pangrill', name: "Pan Grill", price: 20000, img: "Pan Grill.jpeg", desc: "Pan grill anti lengket | 1 pcs", detail: "Pan grill premium dengan lapisan anti lengket" },
+  { id: 'extra_sumpit', name: "Sumpit Stainless", price: 5000, img: "Sumpit.jpeg", desc: "Sumpit stainless steel | 5 pasang", detail: "Sumpit berkualitas tinggi, anti karat" }
+];
+
+// Testimonials & Why Us
+const testimonials = [
+  { name: "Dinda Prameswari", location: "Jagakarsa", text: "Praktis banget! Tinggal pesan, diantar lengkap. Paket Mini Grill cukup untuk berdua. Recommended!", rating: 5, avatar: "DP" },
+  { name: "Rafi Adiputra", location: "Depok", text: "Squad Grill pas buat kumpul temen. Dagingnya fresh, alat lengkap. Harga nett makin mantap!", rating: 5, avatar: "RA" },
+  { name: "Sarah Melati", location: "Cilandak", text: "Family Grill buat acara keluarga besar. Semua suka, harga nett worth it!", rating: 5, avatar: "SM" },
+  { name: "Andi Wijaya", location: "Pasar Minggu", text: "Baru tau ada layanan kaya gini. Enak, murah, alat lengkap. Langganan deh!", rating: 5, avatar: "AW" },
+  { name: "Mega Putri", location: "Lebak Bulus", text: "Big party grill buat acara kantor, semua puas. Harga nett tanpa biaya tambahan!", rating: 5, avatar: "MP" }
+];
+
+const whyData = [
+  { icon: "fas fa-drumstick-bite", title: "Daging Premium", desc: "Shortplate grade A, fresh setiap hari" }, 
+  { icon: "fas fa-truck", title: "Free Delivery", desc: "Gratis antar untuk area Jakarta Selatan" }, 
+  { icon: "fas fa-fire", title: "Alat Grill Lengkap", desc: "Kompor portable, gas, pan grill, sumpit semua siap" }, 
+  { icon: "fas fa-tag", title: "Harga NETT", desc: "Tidak ada biaya tersembunyi" },
+  { icon: "fas fa-certificate", title: "Halal & Higienis", desc: "Jaminan bahan halal" }, 
+  { icon: "fas fa-smile", title: "Tanpa Ribet", desc: "Buka, nyalakan, bakar, nikmati!" }
+];
+
+// Cart Functions
+let cart = [];
+function showToast(msg) { let t = document.createElement('div'); t.className = 'toast-custom'; t.innerHTML = `<i class="fas fa-check-circle me-2"></i>${msg}`; document.body.appendChild(t); setTimeout(() => t.remove(), 2500); }
+function updateCartUI() {
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById('cartCount').innerText = totalQty;
+  const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  document.getElementById('cartTotal').innerText = 'Rp ' + totalPrice.toLocaleString();
+  const container = document.getElementById('cartItemsContainer');
+  if (!container) return;
+  if (cart.length === 0) { container.innerHTML = '<p class="text-muted text-center py-3">Keranjang masih kosong</p>'; return; }
+  container.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">Rp ${item.price.toLocaleString()}</div>
+      </div>
+      <div class="cart-item-controls">
+        <button class="cart-qty-btn dec-qty" data-id="${item.id}">-</button>
+        <span class="cart-item-qty">${item.qty}</span>
+        <button class="cart-qty-btn inc-qty" data-id="${item.id}">+</button>
+        <button class="cart-remove-btn" data-id="${item.id}"><i class="fas fa-trash-alt"></i></button>
+      </div>
+    </div>
+  `).join('');
+  attachCartEvents();
+}
+function attachCartEvents() {
+  document.querySelectorAll('.dec-qty').forEach(btn => btn.addEventListener('click', (e) => { changeQuantity(btn.dataset.id, -1); }));
+  document.querySelectorAll('.inc-qty').forEach(btn => btn.addEventListener('click', (e) => { changeQuantity(btn.dataset.id, 1); }));
+  document.querySelectorAll('.cart-remove-btn').forEach(btn => btn.addEventListener('click', (e) => { removeItem(btn.dataset.id); }));
+}
+function changeQuantity(id, delta) {
+  const idx = cart.findIndex(i => i.id === id);
+  if (idx !== -1) {
+    const newQty = cart[idx].qty + delta;
+    if (newQty <= 0) cart.splice(idx, 1);
+    else cart[idx].qty = newQty;
+    updateCartUI();
+  }
+}
+function removeItem(id) { cart = cart.filter(i => i.id !== id); updateCartUI(); }
+function addToCart(item) {
+  const existing = cart.find(i => i.id === item.id);
+  if (existing) { existing.qty += 1; showToast(`${item.name} jumlah diperbarui (${existing.qty})`); }
+  else { cart.push({ ...item, qty: 1 }); showToast(`${item.name} ditambahkan ke keranjang`); }
+  updateCartUI();
+}
+
+// Render Functions (sama seperti sebelumnya)
+function renderPackages() {
+  let grid = document.getElementById('package-grid'); grid.innerHTML = '';
+  Object.keys(packages).forEach(key => {
+    let p = packages[key];
+    grid.innerHTML += `<div class="col-md-3 col-sm-6"><div class="package-card h-100"><div class="package-img-wrapper"><img src="${p.img}" class="package-img" alt="${p.name}" onerror="this.src='https://placehold.co/400x300/C47A44/white?text=${p.name}'"><div class="package-badge">${p.badge}</div></div><div class="p-3 d-flex flex-column"><h4 class="serif fs-5 fw-bold">${p.name}</h4><div class="package-price">Rp ${p.price.toLocaleString()} <i>-Nett</i></div><p class="small text-muted mb-2"><i class="fas fa-users me-1"></i>${p.serving}</p><ul class="feature-list"><li><i class="fas fa-check-circle"></i>${p.items[0]}</li><li><i class="fas fa-check-circle"></i>${p.items[1]}</li><li><i class="fas fa-check-circle"></i>+ ${p.items.length - 2} item lainnya</li></ul><button class="btn btn-outline-custom w-100 mt-auto view-detail" data-id="${key}">Lihat detail →</button></div></div></div>`;
+  });
+  document.querySelectorAll('.view-detail').forEach(btn => btn.addEventListener('click', () => showPackageDetail(btn.dataset.id)));
+  setTimeout(() => document.querySelectorAll('.package-card').forEach(c => c.classList.add('show')), 100);
+}
+function showPackageDetail(id) {
+  let p = packages[id];
+  let modal = document.createElement('div');
+  modal.className = 'detail-modal';
+  modal.innerHTML = `<div class="detail-content"><div style="background: linear-gradient(135deg, #4A3428, #2E241F);" class="p-4 text-center text-white"><h3 class="serif">${p.name}</h3><p class="mb-2">${p.serving}</p><img src="${p.img}" class="package-image-large" onerror="this.src='https://placehold.co/600x350/C47A44/white?text=${p.name}'"></div><div class="p-4"><h5 class="serif fw-bold">Isi Paket Lengkap:</h5><ul class="list-unstyled mt-3">${p.items.map(i => `<li class="mb-2"><i class="fas fa-check-circle me-2" style="color:var(--copper);"></i>${i}</li>`).join('')}</ul><div class="package-price mt-3">Rp ${p.price.toLocaleString()} <i>-Nett</i></div><button class="btn btn-primary-custom w-100 mt-3 add-cart-package" data-id="${p.id}" data-name="${p.name}" data-price="${p.price}"><i class="fas fa-cart-plus me-2"></i>Tambah ke Keranjang</button><button class="btn btn-outline-custom w-100 mt-2 close-detail">Tutup</button></div></div>`;
+  document.body.appendChild(modal);
+  setTimeout(() => modal.classList.add('active'), 10);
+  modal.querySelector('.add-cart-package').onclick = () => { addToCart({ id: p.id, name: p.name, price: p.price }); modal.classList.remove('active'); setTimeout(() => modal.remove(), 300); };
+  modal.querySelector('.close-detail').onclick = () => { modal.classList.remove('active'); setTimeout(() => modal.remove(), 300); };
+  modal.onclick = (e) => { if (e.target === modal) { modal.classList.remove('active'); setTimeout(() => modal.remove(), 300); } };
+}
+function renderExtras() {
+  const categories = ['protein-list', 'sayuran-list', 'sauce-list', 'drink-list', 'alat-list'];
+  const dataSets = [proteinItems, sayuranItems, sauceItems, drinkItems, alatItems];
+  categories.forEach((cat, idx) => {
+    let div = document.getElementById(cat); if (!div) return;
+    div.innerHTML = '';
+    dataSets[idx].forEach(item => {
+      div.innerHTML += `
+        <div class="menu-card">
+          <div class="menu-img-wrapper" onclick="openLightbox('${item.img}', '${item.name}')">
+            <img src="${item.img}" class="menu-img" alt="${item.name}" onerror="this.src='https://placehold.co/300x200/C47A44/white?text=${item.name}'">
+          </div>
+          <div class="menu-info">
+            <div class="menu-name">${item.name}</div>
+            <div class="menu-desc">${item.desc}</div>
+            <div class="menu-price">Rp ${item.price.toLocaleString()} <small>nett</small></div>
+            <button class="btn-add-cart" onclick="addToCart({id:'${item.id}', name:'${item.name}', price:${item.price}})"><i class="fas fa-cart-plus me-1"></i> Tambah ke Keranjang</button>
+          </div>
+        </div>
+      `;
+    });
+  });
+}
+function renderTestimonials() {
+  let wrapper = document.getElementById('testi-wrapper'); wrapper.innerHTML = '';
+  testimonials.forEach(t => {
+    let stars = ''; for (let i=0;i<5;i++) stars += '<i class="fas fa-star"></i>';
+    wrapper.innerHTML += `<div class="swiper-slide"><div class="testi-card h-100"><div class="testi-stars mb-2">${stars}</div><p class="fst-italic mb-3">"${t.text}"</p><div class="d-flex align-items-center"><div class="testi-avatar me-3">${t.avatar}</div><div><strong>${t.name}</strong><br><small class="text-muted">${t.location}</small></div></div></div></div>`;
+  });
+  new Swiper('.testimonial-swiper', { slidesPerView: 1, spaceBetween: 20, pagination: { el: '.swiper-pagination', clickable: true }, breakpoints: { 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }, autoplay: { delay: 4000, disableOnInteraction: false } });
+}
+function renderWhyUs() {
+  let grid = document.getElementById('why-grid'); grid.innerHTML = '';
+  whyData.forEach((w, i) => { grid.innerHTML += `<div class="col-md-4" data-aos="fade-up" data-aos-delay="${i*100}"><div class="why-card h-100"><div class="why-icon"><i class="${w.icon}"></i></div><h5 class="fw-bold">${w.title}</h5><p class="small text-muted">${w.desc}</p></div></div>`; });
+}
+
+// Tabs
+document.querySelectorAll('.extra-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.extra-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    let cat = tab.dataset.cat;
+    document.querySelectorAll('.extra-category').forEach(c => c.classList.remove('active-category'));
+    document.getElementById(`extra-${cat}`).classList.add('active-category');
+  });
+});
+
+// Cart sidebar
+document.getElementById('cartBtn').onclick = () => { document.getElementById('cartOverlay').classList.add('active'); document.getElementById('cartSidebar').classList.add('open'); };
+document.getElementById('closeCart').onclick = () => { document.getElementById('cartOverlay').classList.remove('active'); document.getElementById('cartSidebar').classList.remove('open'); };
+document.getElementById('cartOverlay').onclick = () => { document.getElementById('cartOverlay').classList.remove('active'); document.getElementById('cartSidebar').classList.remove('open'); };
+document.getElementById('checkoutWA').onclick = () => {
+  if (cart.length === 0) { alert('Keranjang masih kosong!'); return; }
+  const name = document.getElementById('customerName').value.trim();
+  const phone = document.getElementById('customerPhone').value.trim();
+  const address = document.getElementById('customerAddress').value.trim();
+  if (!name) { alert('Harap isi "Atas Nama" terlebih dahulu.'); return; }
+  if (!phone) { alert('Harap isi Nomor Telepon.'); return; }
+  if (!address) { alert('Harap isi Alamat Lengkap.'); return; }
+  let msg = '🔥 *Gunaa Grill Order* 🔥\n\n';
+  msg += `📝 *Atas Nama:* ${name}\n📞 *No. Telepon:* ${phone}\n📍 *Alamat:* ${address}\n─────────────────\n🛒 *Pesanan:*\n`;
+  cart.forEach(i => { msg += `   • ${i.name} x${i.qty} = Rp ${(i.price * i.qty).toLocaleString()}\n`; });
+  const total = cart.reduce((s,i) => s + (i.price * i.qty), 0);
+  msg += `─────────────────\n💰 *Total: Rp ${total.toLocaleString()} (nett)*\n\n_⚠️ Pesanan akan dikonfirmasi via WhatsApp. Terima kasih!_`;
+  window.open(`https://wa.me/62895636110505?text=${encodeURIComponent(msg)}`, '_blank');
+};
+document.getElementById('contactForm').onsubmit = (e) => {
+  e.preventDefault(); let name = document.getElementById('contactName').value, phone = document.getElementById('contactPhone').value, msg = document.getElementById('contactMsg').value;
+  window.open(`https://wa.me/62895636110505?text=${encodeURIComponent(`Halo! Saya ${name} (${phone}).\n\n${msg}`)}`, '_blank');
+  document.getElementById('contactForm').reset();
+};
+window.addEventListener('scroll', () => document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50));
+
+renderPackages(); renderExtras(); renderTestimonials(); renderWhyUs();
+</script>
+</body>
+</html>
